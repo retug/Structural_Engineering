@@ -17,8 +17,7 @@ file_paths= ["RSN 171 - FN.txt", "RSN 171 - FP.txt","RSN 266 - FN.txt","RSN 266 
              ]
              
 
-main_path ="I:\Projects\\2020\\2020-430 Rio Grande Depot Seismic Rehabilitation\\02 - Calculations\\Design\\12 - Time History Ground Motions\\Time History Files\\BSE-2E - Horizontal_Scaled and Rotated"
-end_path = []
+main_path ="I:\Projects\\..."
 
 ##This function generates the PSA Values for a given earthquake record
 
