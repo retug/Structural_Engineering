@@ -4,8 +4,11 @@ import math
 
 # Function to create a PDF from 4 images with filenames as titles
 
-def create_pdf(images, filenames, pdf_path, pdf_page_width, pdf_page_height):
-    pdf_canvas = Image.new('RGB', (int(pdf_page_width), int(pdf_page_height)), 'white')
+# Function to create a PDF from 4 images with filenames as titles
+# Function to create a PDF from 4 images with filenames as titles
+def create_pdf(images, filenames, pdf_path, pdf_page_width, pdf_page_height, dpi):
+    # Create a canvas for an 8.5 x 11 inch page in pixels at the given DPI
+    pdf_canvas = Image.new('RGB', (pdf_page_width, pdf_page_height), 'white')
     thumbnail_size = (int(pdf_page_width / 2), int(pdf_page_height / 2))
 
     # Positions for 2x2 grid
@@ -25,8 +28,19 @@ def create_pdf(images, filenames, pdf_path, pdf_page_width, pdf_page_height):
         image_area_height = int(thumbnail_size[1] * 0.8)
         text_area_height = int(thumbnail_size[1] * 0.1)
 
-        # Resize the image to fit within the 80% reserved for the image
-        img.thumbnail((thumbnail_size[0], image_area_height))
+        # Manually scale the image to 80% of the available area, preserving the aspect ratio
+        aspect_ratio = img.width / img.height
+        if img.width > img.height:
+            # Horizontal image: fit width to 80% of the area
+            new_width = int(thumbnail_size[0] * 0.8)
+            new_height = int(new_width / aspect_ratio)
+        else:
+            # Vertical or square image: fit height to 80% of the area
+            new_height = int(image_area_height)
+            new_width = int(new_height * aspect_ratio)
+
+        # Resize the image
+        img = img.resize((new_width, new_height))
 
         # Create a drawing context for adding text
         draw_img = ImageDraw.Draw(pdf_canvas)
@@ -46,22 +60,24 @@ def create_pdf(images, filenames, pdf_path, pdf_page_width, pdf_page_height):
         draw.text((positions[i][0] + text_position_x, text_position_y), text, fill="black", font=font)
 
         # Calculate the position to paste the image below the text, centered in the 80% image area
-        x_offset = (thumbnail_size[0] - img.width) // 2
-        y_offset = text_area_height + (image_area_height - img.height) // 2
+        x_offset = (thumbnail_size[0] - new_width) // 2
+        y_offset = text_area_height + (image_area_height - new_height) // 2
         position_with_offset = (positions[i][0] + x_offset, positions[i][1] + y_offset)
 
         # Paste the scaled image onto the PDF canvas
         pdf_canvas.paste(img, position_with_offset)
 
-    # Save the result as a PDF
-    pdf_canvas.save(pdf_path)
+    # Save the result as a PDF with the specified DPI
+    pdf_canvas.save(pdf_path, resolution=dpi)
 
 
 # Folder where .jpg images are stored
 folder_path = 'C:\\Users\\ahg\\PycharmProjects\\ImagePDFCreation\\Images'
 
-# Define the size of the PDF page (8.5 x 11 inches in pixels at 300 DPI)
-pdf_page_width, pdf_page_height = (8.5 * 300, 11 * 300)
+# Define the size of the PDF page in pixels for 8.5 x 11 inches at 300 DPI
+dpi = 300  # Dots per inch
+pdf_page_width, pdf_page_height = (int(8.5 * dpi), int(11 * dpi))
+
 
 # Get all .jpg files in the folder
 image_files = [f for f in os.listdir(folder_path) if f.endswith('.jpg')]
@@ -81,6 +97,6 @@ for i in range(0, len(image_files), 4):
     pdf_output_path = f'output_{i // 4 + 1}.pdf'
 
     # Create the PDF for the current set of images, with text
-    create_pdf(images, filenames, pdf_output_path, pdf_page_width, pdf_page_height)
+    create_pdf(images, filenames, pdf_output_path, pdf_page_width, pdf_page_height, dpi)
 
     print(f'Created PDF: {pdf_output_path}')
