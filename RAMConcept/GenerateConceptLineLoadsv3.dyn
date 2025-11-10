@@ -1,0 +1,365 @@
+{
+  "Uuid": "8d0a501e-7f9b-4486-92a8-8169be8abe5f",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "GenerateConceptLineLoadsv3",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Dynamo Python: Write ONE Excel file (or one CSV fallback) with all rows + VIEW_NAME\r\nimport clr, os\r\n\r\n# ----- Inputs -----\r\nrows         = IN[0][1]   # list of [startPt, endPt, dead, live, snow, view_name]\r\nout_dir      = r\"C:\\Users\\aguter\\OneDrive - QUINLIVAN PIERIK & KRAUSE - ARCHITECTS ENGINEERS\\Desktop\"\r\nname_prefix  = IN[1] if len(IN) > 1 and IN[1] else \"SpanLines\"\r\n\r\n# ----- Helpers -----\r\ndef ensure_dir(p):\r\n    if not p:\r\n        raise Exception(\"Output directory path is required.\")\r\n    if not os.path.exists(p):\r\n        os.makedirs(p)\r\n\r\ndef pt_to_tuple(p):\r\n    \"\"\"Accepts DSPoint, Revit XYZ, or (x,y,z) iterable and returns (x,y,z) floats.\"\"\"\r\n    try:\r\n        return (float(p.X), float(p.Y), float(p.Z))  # DSPoint / XYZ\r\n    except:\r\n        pass\r\n    try:\r\n        x, y, z = p\r\n        return (float(x), float(y), float(z))\r\n    except:\r\n        return (None, None, None)\r\n\r\ndef try_excel_com_available():\r\n    \"\"\"Return (excel_app, ExcelModule) or (None, None) if COM not available.\"\"\"\r\n    try:\r\n        clr.AddReference('Microsoft.Office.Interop.Excel')\r\n        from Microsoft.Office.Interop import Excel\r\n        app = Excel.ApplicationClass()\r\n        app.Visible = False\r\n        app.DisplayAlerts = False\r\n        return app, Excel\r\n    except:\r\n        return None, None\r\n\r\ndef save_workbook(app, Excel, filepath, header, data_rows):\r\n    \"\"\"Create one workbook, write header, then many data rows, save as .xlsx.\"\"\"\r\n    wb = None\r\n    try:\r\n        wb = app.Workbooks.Add()\r\n        ws = wb.ActiveSheet\r\n\r\n        # Header\r\n        for c, h in enumerate(header, 1):\r\n            ws.Cells(1, c).Value2 = h\r\n\r\n        # Data rows\r\n        for r, data in enumerate(data_rows, 2):  # start at row 2\r\n            for c, v in enumerate(data, 1):\r\n                ws.Cells(r, c).Value2 = v\r\n\r\n        wb.SaveAs(filepath)\r\n    finally:\r\n        if wb is not None:\r\n            wb.Close(SaveChanges=False)\r\n\r\ndef save_csv(filepath, header, data_rows):\r\n    \"\"\"Fallback: write one CSV with header + all rows.\"\"\"\r\n    import csv\r\n    with open(filepath, mode='w', newline='') as f:\r\n        w = csv.writer(f)\r\n        w.writerow(header)\r\n        for row in data_rows:\r\n            w.writerow(row)\r\n\r\n# ----- Main -----\r\nensure_dir(out_dir)\r\n\r\nheader = [\r\n    \"Start X (ft)\", \"Start Y (ft)\", \"Start Z (ft)\",\r\n    \"End X (ft)\",   \"End Y (ft)\",   \"End Z (ft)\",\r\n    \"DEAD (plf)\", \"LIVE (plf)\", \"SNOW (plf)\",\r\n    \"VIEW_NAME\"\r\n]\r\n\r\n# Normalize all rows first\r\ndata_rows = []\r\nfor row in (rows or []):\r\n    # Accept rows with or without view_name at end\r\n    start_pt, end_pt, dead_plf, live_plf, snow_plf, view_name = (row + [None]*6)[:6]\r\n    sx, sy, sz = pt_to_tuple(start_pt)\r\n    ex, ey, ez = pt_to_tuple(end_pt)\r\n    data_rows.append([sx, sy, sz, ex, ey, ez, dead_plf, live_plf, snow_plf, view_name])\r\n\r\n# Single filename\r\nxlsx_path = os.path.join(out_dir, \"{}.xlsx\".format(name_prefix))\r\ncsv_path  = os.path.join(out_dir, \"{}.csv\".format(name_prefix))\r\n\r\ncreated_file = None\r\nerrors = []\r\n\r\nexcel_app, ExcelMod = try_excel_com_available()\r\ntry:\r\n    if excel_app is not None:\r\n        save_workbook(excel_app, ExcelMod, xlsx_path, header, data_rows)\r\n        created_file = xlsx_path\r\n    else:\r\n        save_csv(csv_path, header, data_rows)\r\n        created_file = csv_path\r\nexcept Exception as e:\r\n    errors.append(str(e))\r\nfinally:\r\n    if excel_app is not None:\r\n        try:\r\n            excel_app.Quit()\r\n        except:\r\n            pass\r\n\r\nOUT = created_file, errors\r\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "a67c64c496c14996a6b5fc3cfba67fd2",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "c768b43b96734c51be4229eaf95b57b5",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d21ade5fb4974319926c1c563b2dbf21",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "44dc0d616a5f49aa92d40b18fb9ffb69",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "6e17759a6e604cd8b249572c87651697",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "adb37fb830f94587b06958e0dd13da65",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Span Direction\";"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Revit / Dynamo Python: Find all instances by family name and build rotated span rectangles\r\n# Ensures DEAD/LIVE/SNOW values are normalized to pounds per linear foot (plf)\r\nimport clr, math, re\r\n\r\n# Revit API\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import FilteredElementCollector, StorageType\r\n\r\n# Dynamo / Revit plumbing\r\nclr.AddReference(\"RevitServices\")\r\nfrom RevitServices.Persistence import DocumentManager\r\n\r\n# Dynamo geometry\r\nclr.AddReference(\"ProtoGeometry\")\r\nfrom Autodesk.DesignScript.Geometry import Point as DSPoint, Line as DSLine\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\n# ---------- Inputs ----------\r\n# IN[0]: Family name string, e.g. \"Span Direction\"\r\n# IN[1]: View or list of views\r\nfamily_name = IN[0]\r\nviews_input = IN[1]\r\n\r\n# ---------- Helpers ----------\r\ntry:\r\n    Unwrap = UnwrapElement\r\nexcept:\r\n    def Unwrap(x): return x\r\n\r\ndef as_list(x):\r\n    if x is None: return []\r\n    return x if isinstance(x, (list, tuple)) else [x]\r\n\r\nviews = [Unwrap(v) for v in as_list(views_input)]\r\n\r\ndef get_param(elem, param_name):\r\n    \"\"\"Return (p, storage_type, as_double, as_string, as_value_string).\"\"\"\r\n    p = elem.LookupParameter(param_name)\r\n    if not p:\r\n        return None, None, None, None, None\r\n    st = p.StorageType\r\n    as_double = p.AsDouble() if st == StorageType.Double else None\r\n    as_string = p.AsString() if st == StorageType.String else None\r\n    # AsValueString() often includes formatted units like '0.6 k/ft'\r\n    try:\r\n        as_value_string = p.AsValueString()\r\n    except:\r\n        as_value_string = None\r\n    return p, st, as_double, as_string, as_value_string\r\n\r\n_num_re = re.compile(r'[-+]?\\d*\\.?\\d+(?:[eE][-+]?\\d+)?')\r\n\r\ndef _parse_number(s):\r\n    if not s: return None\r\n    m = _num_re.search(s.replace(',', ''))\r\n    return float(m.group(0)) if m else None\r\n\r\ndef to_plf(elem, param_name):\r\n    \"\"\"\r\n    Normalize the given parameter to pounds per linear foot (plf).\r\n    Strategy:\r\n      - If Double and no unit text: assume already plf (Revit internal is lbf/ft for force/length).\r\n      - If ValueString contains units:\r\n          * 'k/ft', 'kips/ft', 'kip/ft' => convert k/ft -> plf (x1000) and apply sign\r\n          * 'plf', 'lb/ft', 'lbf/ft'    => treat numeric as plf\r\n          * OPTIONAL: 'N/m' => convert to plf (N/m * 0.0685217659)\r\n      - If String contains a number + units, parse similarly.\r\n      - If Integer, treat as plf.\r\n    \"\"\"\r\n    p, st, as_double, as_string, as_value_string = get_param(elem, param_name)\r\n\r\n    # Prefer a formatted display string if present (often includes units)\r\n    txt = (as_value_string or as_string or \"\").strip().lower()\r\n\r\n    # Case 1: formatted string with units\r\n    if txt:\r\n        n = _parse_number(txt)\r\n        if n is not None:\r\n            if 'k/ft' in txt or 'kip/ft' in txt or 'kips/ft' in txt:\r\n                return n * 1000.0 * ( -1.0 if '-' in txt and n > 0 else 1.0 ) if False else n * 1000.0\r\n            if 'plf' in txt or 'lb/ft' in txt or 'lbf/ft' in txt:\r\n                return n\r\n            if 'n/m' in txt:\r\n                return n * 0.0685217659  # N/m -> lbf/ft\r\n            # Fallback: if it’s just a number, assume plf\r\n            return n\r\n\r\n    # Case 2: numeric double with no explicit unit text -> assume plf\r\n    if st == StorageType.Double and as_double is not None:\r\n        return float(as_double)\r\n\r\n    # Case 3: integer -> assume plf\r\n    if st == StorageType.Integer and p is not None:\r\n        try:\r\n            return float(p.AsInteger())\r\n        except:\r\n            pass\r\n\r\n    # Case 4: string with number but no units -> assume plf\r\n    if as_string:\r\n        n = _parse_number(as_string)\r\n        if n is not None:\r\n            return n\r\n\r\n    return None\r\n\r\n# --- Geometry helpers ---\r\ndef _rot2d(x, y, ang):\r\n    ca, sa = math.cos(ang), math.sin(ang)\r\n    return (x*ca - y*sa, x*sa + y*ca)\r\n\r\ndef is_y_flipped(fi, view):\r\n    try:\r\n        if getattr(fi, \"FacingFlipped\", False): return True\r\n    except: pass\r\n    try:\r\n        if getattr(fi, \"Mirrored\", False): return True\r\n    except: pass\r\n    try:\r\n        fo = getattr(fi, \"FacingOrientation\", None)\r\n        up = getattr(view, \"UpDirection\", None)\r\n        if fo and up and fo.DotProduct(up) < 0:\r\n            return True\r\n    except: pass\r\n    return False\r\n\r\ndef rectangle_lines_from_spans(center_xyz, rotation_rad,\r\n                               left_span, span_length, bot_span, top_span,\r\n                               flip_y=False):\r\n    # X extents after shifting by -left_span\r\n    xL = 0.0\r\n    xR = span_length\r\n    # Y extents relative to center\r\n    if flip_y:\r\n        yB = -top_span\r\n        yT =  bot_span\r\n    else:\r\n        yB = -bot_span\r\n        yT =  top_span\r\n    local_pts = [(xL, yB), (xR, yB), (xR, yT), (xL, yT)]\r\n    cx, cy, cz = center_xyz.X, center_xyz.Y, center_xyz.Z\r\n    world_pts = []\r\n    for (lx, ly) in local_pts:\r\n        rx, ry = _rot2d(lx, ly, rotation_rad)\r\n        world_pts.append(DSPoint.ByCoordinates(cx + rx, cy + ry, cz))\r\n    P0, P1, P2, P3 = world_pts\r\n    return [\r\n        DSLine.ByStartPointEndPoint(P0, P1),\r\n        DSLine.ByStartPointEndPoint(P1, P2),\r\n        DSLine.ByStartPointEndPoint(P2, P3),\r\n        DSLine.ByStartPointEndPoint(P3, P0),\r\n    ]\r\n\r\n# ---------- Main ----------\r\nresults    = []   # matching elements\r\ncenters    = []   # element center points (DSPoint or None)\r\nrectangles = []   # list of 4 DSLine per element (or None if cannot build)\r\noutput     = []   # [StartPoint, EndPoint, DEAD_plf, LIVE_plf, SNOW_plf, VIEW_NAME]\r\n\r\nif family_name and views:\r\n    for v in views:\r\n        view_name = v.Name\r\n        collector = FilteredElementCollector(doc, v.Id).WhereElementIsNotElementType()\r\n        for e in collector:\r\n            try:\r\n                sym = doc.GetElement(e.GetTypeId())\r\n                fam = sym.Family if sym else None\r\n                if fam and fam.Name == family_name:\r\n                    results.append(e)\r\n\r\n                    # location (center) and rotation\r\n                    loc = e.Location\r\n                    pt_xyz = loc.Point if hasattr(loc, \"Point\") else None\r\n                    rot    = getattr(loc, \"Rotation\", 0.0) or 0.0\r\n\r\n                    # store center (as DSPoint for convenience)\r\n                    centers.append(DSPoint.ByCoordinates(pt_xyz.X, pt_xyz.Y, pt_xyz.Z) if pt_xyz else None)\r\n\r\n                    # required params\r\n                    left_span  = to_plf(e, \"Left Span\")     # remains distances (ft) if those params are lengths\r\n                    span_len   = to_plf(e, \"Span Length\")\r\n                    bot_span   = to_plf(e, \"Bot Span\")\r\n                    top_span   = to_plf(e, \"Top Span\")\r\n\r\n                    # If span parameters are lengths, not loads, they should not go through to_plf.\r\n                    # If yours are truly lengths, replace the four lines above with get_param(elem,..).AsDouble() pattern.\r\n                    # Keeping original behavior for continuity with your setup:\r\n                    def get_len(name):\r\n                        _, st, ad, _, _ = get_param(e, name)\r\n                        return float(ad) if (st == StorageType.Double and ad is not None) else None\r\n\r\n                    left_span  = get_len(\"Left Span\")\r\n                    span_len   = get_len(\"Span Length\")\r\n                    bot_span   = get_len(\"Bot Span\")\r\n                    top_span   = get_len(\"Top Span\")\r\n\r\n                    # Normalize loads to plf\r\n                    dead_plf = to_plf(e, \"DEAD PLF\")\r\n                    live_plf = to_plf(e, \"LIVE PLF\")\r\n                    snow_plf = to_plf(e, \"SNOW PLF\")\r\n\r\n                    # Build rectangle only if everything is valid\r\n                    if pt_xyz is not None and None not in (left_span, span_len, bot_span, top_span):\r\n                        flip_y = is_y_flipped(e, v)\r\n                        rect_edges = rectangle_lines_from_spans(\r\n                            pt_xyz, rot, left_span, span_len, bot_span, top_span, flip_y=flip_y\r\n                        )\r\n\r\n                        # Edges: 0=bottom, 1=right, 2=top, 3=left\r\n                        line_right = rect_edges[1]\r\n                        line_left  = rect_edges[3]\r\n                        r0, r1 = line_right.StartPoint, line_right.EndPoint\r\n                        l0, l1 = line_left.StartPoint,  line_left.EndPoint\r\n\r\n                        # Append both lines with load values (plf) and view name\r\n                        output.append([r0, r1, dead_plf, live_plf, snow_plf, view_name])\r\n                        output.append([l0, l1, dead_plf, live_plf, snow_plf, view_name])\r\n\r\n                        rectangles.append(rect_edges)\r\n                    else:\r\n                        rectangles.append(None)\r\n            except:\r\n                # Silently skip elements that don't behave like family instances\r\n                pass\r\n\r\n# Outputs\r\nOUT = rectangles, output\r\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "c0829b88b129417d8ea11a51e7a49e13",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "e8b8de9f8fec4d70a5f866b64a0f7603",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ab2586ac03b42dabafd504a0039b1e4",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5e3e8a4f27d7473f871f375961274ddb",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "e80506963a274ecd9ff65f3cf17e7db9",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2bc33be8da8446ee94e65a26559171eb",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Loading Data\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "fa09c844674d4700acdea67415618d96",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1181487ebf0146709ce932eab1d7ac69",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "[\"3_LEVEL 2-COORD-OVERALL AHG\",\"4_LEVEL 3-COORD-OVERALL AHG\", \"5_BO ROOF TRUSS-COORD-OVERALL AHG\", \"6_LEVEL 4-COORD-OVERALL AHG\"];"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "import clr\r\n\r\n# Revit API\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import FilteredElementCollector, View\r\n\r\n# Dynamo-Revit plumbing\r\nclr.AddReference(\"RevitServices\")\r\nfrom RevitServices.Persistence import DocumentManager\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\n# ---------- Inputs ----------\r\n# IN[0] = list of view name strings, e.g. [\"Level 1 - Framing Plan\", \"Roof - Framing Plan\"]\r\nview_names = IN[0]\r\n\r\n# ---------- Helpers ----------\r\ndef as_list(x):\r\n    if x is None: return []\r\n    return x if isinstance(x, (list, tuple)) else [x]\r\n\r\nnames = [str(vn).strip() for vn in as_list(view_names)]\r\n\r\n# ---------- Main ----------\r\n# Collect all non-template views in the model\r\nall_views = FilteredElementCollector(doc).OfClass(View).ToElements()\r\nviews_by_name = {v.Name: v for v in all_views if not v.IsTemplate}\r\n\r\n# Match input strings to actual views\r\nmatched_views = []\r\nfor name in names:\r\n    view = views_by_name.get(name)\r\n    if view:\r\n        matched_views.append(view)\r\n    else:\r\n        # optional: print or store None if not found\r\n        matched_views.append(None)\r\n\r\nOUT = matched_views\r\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "6541de9a08f949aeb6b7f630e2d14c5c",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "e8350fd71b10412da94910b871938eec",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "06c610a2274441deaebdbdef40d83d39",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "89d3257cf40c4f1ebf697428870304aa",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "629457c8c790435e956dbe2dc46565c8",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "[\"5_BO ROOF TRUSS-COORD-OVERALL AHG\"];"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "adb37fb830f94587b06958e0dd13da65",
+      "End": "e8b8de9f8fec4d70a5f866b64a0f7603",
+      "Id": "b0300e0b12c74c50acfed945cbbe999b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5e3e8a4f27d7473f871f375961274ddb",
+      "End": "c768b43b96734c51be4229eaf95b57b5",
+      "Id": "53966c63e519466680030a910763d179",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2bc33be8da8446ee94e65a26559171eb",
+      "End": "d21ade5fb4974319926c1c563b2dbf21",
+      "Id": "93f71d25be0948d3aaba93aa8703f89e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "06c610a2274441deaebdbdef40d83d39",
+      "End": "5ab2586ac03b42dabafd504a0039b1e4",
+      "Id": "f4e124548a37485dbe7655b6b1bef634",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "629457c8c790435e956dbe2dc46565c8",
+      "End": "e8350fd71b10412da94910b871938eec",
+      "Id": "b6c495b6db0d4d65ab9e7637d4ea4239",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.3",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "8.2",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.3.0.6316",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -182.2193145751953,
+      "EyeY": 165.42963409423828,
+      "EyeZ": 133.3861846923828,
+      "LookX": 140.45999145507812,
+      "LookY": -180.76144409179688,
+      "LookZ": -267.6589050292969,
+      "UpX": 0.14744450151920319,
+      "UpY": 0.9483240246772766,
+      "UpZ": -0.2809655964374542
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "a67c64c496c14996a6b5fc3cfba67fd2",
+        "Name": "Python Script - Write to CSV",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1732.8701548464194,
+        "Y": 575.0416706383968
+      },
+      {
+        "Id": "6e17759a6e604cd8b249572c87651697",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 711.157532427671,
+        "Y": 421.588674663995
+      },
+      {
+        "Id": "c0829b88b129417d8ea11a51e7a49e13",
+        "Name": "Python Script Pull Location and Loading Values",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1174.0527932684713,
+        "Y": 490.7612324400401
+      },
+      {
+        "Id": "e80506963a274ecd9ff65f3cf17e7db9",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1388.2566061270988,
+        "Y": 788.8301843404926
+      },
+      {
+        "Id": "fa09c844674d4700acdea67415618d96",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -394.10268037935793,
+        "Y": 930.601379197892
+      },
+      {
+        "Id": "6541de9a08f949aeb6b7f630e2d14c5c",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1095.5614546410657,
+        "Y": 917.9565530650369
+      },
+      {
+        "Id": "89d3257cf40c4f1ebf697428870304aa",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -12.99692231373001,
+        "Y": 1114.332714531537
+      }
+    ],
+    "Annotations": [],
+    "X": 224.9246358641028,
+    "Y": -226.36466097972004,
+    "Zoom": 0.652128474714574
+  }
+}
