@@ -1,0 +1,451 @@
+{
+  "Uuid": "9b82b581-a891-43eb-9831-1df2c7489799",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Shearwall Locations to RAM Concept",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "Id": "957131e2f3b149a78bf102d533dcdf3d",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "c9f8e60e617e4d71a8251c732b300c1d",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "23659d340fe34820afe985c3ba2e17a9",
+          "Name": "Elements",
+          "Description": "An element class.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 624,
+      "SelectedString": "OST_StructuralFraming",
+      "Id": "083e433794cf4d1689b3c3a5e6c828fb",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f850a05682844aaa970bc03012eeed4d",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "40b078f133204bafb94264542040ab0e",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0e25889537a64a61909a7b1a3890e0ec",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"ATS Shearwall\";"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "import clr\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import (\r\n    FilteredElementCollector,\r\n    FamilyInstance,\r\n    ElementId\r\n)\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\n# Inputs\r\ncategory = IN[0]      # Dynamo Category\r\nfamilyName = IN[1]    # string\r\n\r\n# Convert Dynamo category Id (int) → Revit ElementId\r\ncatId = ElementId(category.Id)\r\n\r\n# Collect all instances in the category\r\ncollector = (FilteredElementCollector(doc)\r\n             .OfCategoryId(catId)\r\n             .WhereElementIsNotElementType())\r\n\r\nresults = []\r\n\r\n# Filter by family name\r\nfor el in collector:\r\n    if isinstance(el, FamilyInstance):\r\n        if el.Symbol.Family.Name == familyName:\r\n            results.append(el.ToDSType(True))\r\n\r\nOUT = results, category.Id, catId\r\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "71ff79f7c27e49d29b6064d8276c401e",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "18f1686d1f324ac6b2b65a4779328bf9",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f73bad4cc07b4d95a4e02413c9156958",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "15111dbc2b844e79bd55ef39d4a1b158",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "0e14865585274e339389749351642afd",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "da2462af78f54aa282680b49a63e9e75",
+          "Name": "name",
+          "Description": "The built in category name.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8ed788eaf1d04a06bbc5e0ca146b74c0",
+          "Name": "Category",
+          "Description": "Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Category.ByName@string",
+      "Replication": "Auto",
+      "Description": "Gets a Revit category by the built-in category name.\n\nCategory.ByName (name: string): Category"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "cdc86dd0add548039d902a3c310ef70d",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d050d0acdc5944f0bc4cac171a366454",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Structural Framing\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "f94720c9d56646dea439058c6d06ddc7",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "45e37d3c4b7e40fb961443a079ee422f",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"ATS Shearwall\";"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "import clr\r\n\r\n# Dynamo geometry\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import Point, Line\r\n\r\n# Revit / Dynamo\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import FamilyInstance\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\n# ---- INPUTS ----\r\n# IN[0] = list of family instances (from previous node)\r\nelems_in = IN[0][0]\r\nif not isinstance(elems_in, list):\r\n    elems_in = [elems_in]\r\n\r\n# unwrap to Revit API elements\r\nelems = [UnwrapElement(e) for e in elems_in]\r\n\r\nstart_pts = []\r\nlines = []\r\nlengthSWs = []\r\nfor fi in elems:\r\n    if not isinstance(fi, FamilyInstance):\r\n        continue\r\n\r\n    # Get length from \"Length\" parameter (internal units: feet)\r\n    length_param = fi.LookupParameter(\"Shearwall Length\")\r\n    lengthSWs.append(length_param)\r\n    if length_param is None:\r\n        continue\r\n    length = length_param.AsDouble()\r\n\r\n    # Get instance transform (origin + local axes)\r\n    t = fi.GetTransform()\r\n    origin = t.Origin      # assumed START point\r\n    direction = t.BasisX   # assumed along member axis\r\n\r\n    # End point = origin + length * direction\r\n\r\n    end_xyz = origin.Add(direction.Multiply(length))\r\n\r\n\r\n    # Convert XYZ → Dynamo Points\r\n    start_pt = Point.ByCoordinates(origin.X, origin.Y, origin.Z)\r\n    end_pt   = Point.ByCoordinates(end_xyz.X, end_xyz.Y, end_xyz.Z)\r\n\r\n    start_pts.append(start_pt)\r\n    lines.append(Line.ByStartPointEndPoint(start_pt, end_pt))\r\n\r\n# OUT: [list of start points, list of lines]\r\nOUT = (start_pts, lines, elems, lengthSWs)\r\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "b69c1f97a56a4ba8a4caedb66bb88090",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "e6ecaf51575047de85c81b4ef5b8fd58",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "07aff54490f3443d885987a7f10268ce",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "import clr, os, re\r\n\r\n# Dynamo geometry\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import Point, Line\r\n\r\n# Revit / Dynamo\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import FamilyInstance, UnitUtils\r\n\r\n# Units API detection\r\ntry:\r\n    # Revit 2022+ ForgeTypeId units\r\n    from Autodesk.Revit.DB import UnitTypeId\r\n    HAS_FORGE_UNITS = True\r\nexcept:\r\n    from Autodesk.Revit.DB import DisplayUnitType\r\n    HAS_FORGE_UNITS = False\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\n# -----------------------\r\n# INPUTS\r\n# -----------------------\r\nelems_in = IN[0][0]  # list of family instances\r\nif not isinstance(elems_in, list):\r\n    elems_in = [elems_in]\r\n\r\nout_dir = IN[1] if len(IN) > 1 and IN[1] else os.path.expanduser(\"~/Desktop\")\r\nname_prefix = IN[2] if len(IN) > 2 and IN[2] else \"Wind\"\r\n\r\n# -----------------------\r\n# Helpers (same style as your sample)\r\n# -----------------------\r\ndef ensure_dir(p):\r\n    if not p:\r\n        raise Exception(\"Output directory path is required.\")\r\n    if not os.path.exists(p):\r\n        os.makedirs(p)\r\n\r\ndef try_excel_com_available():\r\n    \"\"\"Return (excel_app, ExcelModule) or (None, None) if COM not available.\"\"\"\r\n    try:\r\n        clr.AddReference('Microsoft.Office.Interop.Excel')\r\n        from Microsoft.Office.Interop import Excel\r\n        app = Excel.ApplicationClass()\r\n        app.Visible = False\r\n        app.DisplayAlerts = False\r\n        return app, Excel\r\n    except:\r\n        return None, None\r\n\r\ndef save_workbook(app, Excel, filepath, header, data_rows):\r\n    \"\"\"Create one workbook, write header, then many data rows, save as .xlsx.\"\"\"\r\n    wb = None\r\n    try:\r\n        wb = app.Workbooks.Add()\r\n        ws = wb.ActiveSheet\r\n\r\n        # Header\r\n        for c, h in enumerate(header, 1):\r\n            ws.Cells(1, c).Value2 = h\r\n\r\n        # Data rows\r\n        for r, data in enumerate(data_rows, 2):  # start at row 2\r\n            for c, v in enumerate(data, 1):\r\n                ws.Cells(r, c).Value2 = v\r\n\r\n        wb.SaveAs(filepath)\r\n    finally:\r\n        if wb is not None:\r\n            wb.Close(SaveChanges=False)\r\n\r\ndef save_csv(filepath, header, data_rows):\r\n    \"\"\"Fallback: write one CSV with header + all rows.\"\"\"\r\n    import csv\r\n    with open(filepath, mode='w', newline='') as f:\r\n        w = csv.writer(f)\r\n        w.writerow(header)\r\n        for row in data_rows:\r\n            w.writerow(row)\r\n\r\ndef write_one_file(excel_app, ExcelMod, base_path_no_ext, header, data_rows):\r\n    \"\"\"Write xlsx if Excel exists, else csv. Returns created_file path.\"\"\"\r\n    xlsx_path = base_path_no_ext + \".xlsx\"\r\n    csv_path  = base_path_no_ext + \".csv\"\r\n\r\n    if excel_app is not None:\r\n        save_workbook(excel_app, ExcelMod, xlsx_path, header, data_rows)\r\n        return xlsx_path\r\n    else:\r\n        save_csv(csv_path, header, data_rows)\r\n        return csv_path\r\n\r\ndef get_param_str(e, name):\r\n    p = e.LookupParameter(name)\r\n    if p is None:\r\n        return None\r\n    s = p.AsString()\r\n    if not s:\r\n        try:\r\n            s = p.AsValueString()\r\n        except:\r\n            s = None\r\n    return s\r\n\r\ndef _parse_value_string_to_float(s):\r\n    \"\"\"\r\n    Parse something like:\r\n      \"610.7 lb/ft\" -> 610.7\r\n      \"12.95\" -> 12.95\r\n      \"1,234.56 kips\" -> 1234.56\r\n    \"\"\"\r\n    if s is None:\r\n        return None\r\n    s = s.strip()\r\n    if not s:\r\n        return None\r\n    # remove commas, extract first float-like token\r\n    s = s.replace(\",\", \"\")\r\n    m = re.search(r\"[-+]?\\d*\\.?\\d+(?:[eE][-+]?\\d+)?\", s)\r\n    if not m:\r\n        return None\r\n    try:\r\n        return float(m.group(0))\r\n    except:\r\n        return None\r\n\r\ndef _get_display_units_id(param):\r\n    \"\"\"\r\n    Returns the unit id object if possible (ForgeTypeId in Revit 2022+),\r\n    otherwise returns DisplayUnitType in older Revit, or None.\r\n    \"\"\"\r\n    try:\r\n        # Revit 2022+: Parameter.GetUnitTypeId()\r\n        return param.GetUnitTypeId()\r\n    except:\r\n        pass\r\n\r\n    # Older: might be param.DisplayUnitType (not always available depending on Revit version)\r\n    try:\r\n        return param.DisplayUnitType\r\n    except:\r\n        return None\r\n\r\ndef _convert_internal_to_param_display(param, v_internal):\r\n    \"\"\"\r\n    Convert AsDouble internal value -> numeric in the parameter's *display unit*.\r\n    This is the closest match to the value you see in Properties/RevitLookup.\r\n    \"\"\"\r\n    # Try unit-aware conversion first\r\n    units_id = _get_display_units_id(param)\r\n    if units_id is not None:\r\n        try:\r\n            return UnitUtils.ConvertFromInternalUnits(v_internal, units_id)\r\n        except:\r\n            pass\r\n\r\n    # Fallback: parse AsValueString\r\n    try:\r\n        return _parse_value_string_to_float(param.AsValueString())\r\n    except:\r\n        return None\r\n\r\ndef get_param_double(e, name, desired=None):\r\n    \"\"\"\r\n    Returns the parameter value in desired units by:\r\n      1) converting AsDouble() -> parameter display units (using GetUnitTypeId)\r\n      2) converting from those display units into your requested output\r\n\r\n    desired:\r\n      - None      : returns in PARAM DISPLAY UNITS (matches what you see in UI)\r\n      - \"kip\"     : returns kips\r\n      - \"kip/ft\"  : returns kip/ft\r\n    \"\"\"\r\n    p = e.LookupParameter(name)\r\n    if p is None or (hasattr(p, \"HasValue\") and not p.HasValue):\r\n        return None\r\n\r\n    try:\r\n        v_internal = p.AsDouble()\r\n    except:\r\n        v_internal = None\r\n\r\n    # First: get the numeric value in the parameter's displayed units\r\n    v_disp = None\r\n    if v_internal is not None:\r\n        v_disp = _convert_internal_to_param_display(p, v_internal)\r\n\r\n    # If still None, try parse AsValueString anyway\r\n    if v_disp is None:\r\n        try:\r\n            v_disp = _parse_value_string_to_float(p.AsValueString())\r\n        except:\r\n            v_disp = None\r\n\r\n    if v_disp is None:\r\n        return None\r\n\r\n    if desired is None:\r\n        return v_disp\r\n\r\n    # Determine what the parameter's display unit *is* (string check is robust across versions)\r\n    unit_id = _get_display_units_id(p)\r\n    unit_str = str(unit_id).lower() if unit_id is not None else \"\"\r\n\r\n    # Now convert from display units -> desired\r\n    if desired == \"kip\":\r\n        # If parameter is already in kips, return directly\r\n        if \"kips\" in unit_str or \"kip\" in unit_str:\r\n            return v_disp\r\n        # If parameter is in pounds-force, convert to kips\r\n        if \"lb\" in unit_str or \"pound\" in unit_str:\r\n            return v_disp / 1000.0\r\n        # Unknown: assume already kips\r\n        return v_disp\r\n\r\n    if desired == \"kip/ft\":\r\n        # If already in kip/ft\r\n        if (\"kip\" in unit_str and \"foot\" in unit_str) or (\"kip\" in unit_str and \"/ft\" in unit_str):\r\n            return v_disp\r\n        # If in lb/ft, convert to kip/ft\r\n        if (\"lb\" in unit_str and \"foot\" in unit_str) or (\"lb\" in unit_str and \"/ft\" in unit_str) or (\"pound\" in unit_str and \"foot\" in unit_str):\r\n            return v_disp / 1000.0\r\n        # Unknown: assume lb/ft and convert\r\n        return v_disp / 1000.0\r\n\r\n    return v_disp\r\n\r\ndef safe_float(x, default=0.0):\r\n    try:\r\n        return float(x)\r\n    except:\r\n        return default\r\n\r\n# -----------------------\r\n# MAIN\r\n# -----------------------\r\nensure_dir(out_dir)\r\nview_name = doc.ActiveView.Name\r\n\r\n# Unwrap\r\nelems = [UnwrapElement(e) for e in elems_in]\r\n\r\n# Geometry outputs (optional)\r\nstart_pts = []\r\nlines = []\r\n\r\n# Build rows\r\nline_rows_X, line_rows_Y = [], []\r\npt_rows_X, pt_rows_Y     = [], []\r\n\r\nOFFSET_FT = 0.5  # 6\"\r\n\r\nWindValues = []\r\n\r\nfor fi in elems:\r\n    if not isinstance(fi, FamilyInstance):\r\n        continue\r\n\r\n    dir_xy = get_param_str(fi, \"Shear Wall Direction\")\r\n    if not dir_xy:\r\n        continue\r\n    dir_xy = dir_xy.strip().upper()\r\n    if dir_xy not in [\"X\", \"Y\"]:\r\n        continue\r\n\r\n    # Length (ft)\r\n    length_param = fi.LookupParameter(\"Shearwall Length\")\r\n    if length_param is None:\r\n        continue\r\n    length_ft = length_param.AsDouble()\r\n\r\n    # ---- FIXED UNIT PULLS ----\r\n    # Wind PLF: want kip/ft (even though UI shows lb/ft)\r\n    wind_plf = safe_float(get_param_double(fi, \"Wind PLF\", \"kip/ft\"), 0.0)\r\n\r\n    # Optional force value: want kips (if your parameter is set up that way)\r\n    wind_force = safe_float(get_param_double(fi, \"Wind Force\", \"kip\"), 0.0)\r\n    WindValues.append(wind_force)\r\n\r\n    # T_C Couple: UI shows kips; return kips (matches UI numeric)\r\n    tc = safe_float(get_param_double(fi, \"T_C Couple\", \"kip\"), 0.0)\r\n\r\n    # Transform-based geometry\r\n    t = fi.GetTransform()\r\n    origin = t.Origin\r\n    direction = t.BasisX\r\n\r\n    end_xyz = origin.Add(direction.Multiply(length_ft))\r\n\r\n    # Dynamo geometry outputs\r\n    start_pt_ds = Point.ByCoordinates(origin.X, origin.Y, origin.Z)\r\n    end_pt_ds   = Point.ByCoordinates(end_xyz.X, end_xyz.Y, end_xyz.Z)\r\n    start_pts.append(start_pt_ds)\r\n    lines.append(Line.ByStartPointEndPoint(start_pt_ds, end_pt_ds))\r\n\r\n    # -------- LINE LOAD ROW (Fx/Fy/Fz in kip/ft) --------\r\n    # Wall axis direction projected to XY (unit vector)\r\n    dx = float(direction.X)\r\n    dy = float(direction.Y)\r\n\r\n    mag = (dx*dx + dy*dy) ** 0.5\r\n    if mag > 1e-9:\r\n        ux = dx / mag\r\n        uy = dy / mag\r\n    else:\r\n        ux = 0.0\r\n        uy = 0.0\r\n\r\n    # Resolve WindPLF into global components (assumes PLF is along wall axis)\r\n    fx = wind_plf * ux\r\n    fy = wind_plf * uy\r\n    fz = 0.0\r\n\r\n    row_line = [\r\n        origin.X, origin.Y, origin.Z,\r\n        end_xyz.X, end_xyz.Y, end_xyz.Z,\r\n        fx, fy, fz,\r\n        view_name\r\n    ]\r\n\r\n    # -------- POINT LOAD ROWS (offset 6\" toward center), kips --------\r\n    p1 = origin.Add(direction.Multiply(OFFSET_FT))          # inset from start\r\n    p2 = end_xyz.Add(direction.Multiply(-OFFSET_FT))        # inset from end\r\n\r\n    row_p1 = [p1.X, p1.Y, p1.Z, 0, 0, +tc, view_name]\r\n    row_p2 = [p2.X, p2.Y, p2.Z, 0, 0, -tc, view_name]\r\n\r\n    if dir_xy == \"X\":\r\n        line_rows_X.append(row_line)\r\n        pt_rows_X.append(row_p1)\r\n        pt_rows_X.append(row_p2)\r\n    else:\r\n        line_rows_Y.append(row_line)\r\n        pt_rows_Y.append(row_p1)\r\n        pt_rows_Y.append(row_p2)\r\n\r\n# Headers (line loads)\r\nline_header = [\r\n    \"Start X (ft)\", \"Start Y (ft)\", \"Start Z (ft)\",\r\n    \"End X (ft)\",   \"End Y (ft)\",   \"End Z (ft)\",\r\n    \"Fx (kip/ft)\", \"Fy (kip/ft)\", \"Fz (kip/ft)\",\r\n    \"VIEW_NAME\"\r\n]\r\n\r\n# Headers (point loads)\r\npoint_header = [\r\n    \"X (ft)\", \"Y (ft)\", \"Z (ft)\",\r\n    \"FX (kip)\", \"FY (kip)\", \"FZ (kip)\",\r\n    \"VIEW_NAME\"\r\n]\r\n\r\ncreated_files = []\r\nerrors = []\r\n\r\nexcel_app, ExcelMod = try_excel_com_available()\r\ntry:\r\n    # Wind X line loads\r\n    created_files.append(write_one_file(\r\n        excel_app, ExcelMod,\r\n        os.path.join(out_dir, \"{} X\".format(name_prefix)),\r\n        line_header, line_rows_X\r\n    ))\r\n\r\n    # Wind Y line loads\r\n    created_files.append(write_one_file(\r\n        excel_app, ExcelMod,\r\n        os.path.join(out_dir, \"{} Y\".format(name_prefix)),\r\n        line_header, line_rows_Y\r\n    ))\r\n\r\n    # Wind X point loads\r\n    created_files.append(write_one_file(\r\n        excel_app, ExcelMod,\r\n        os.path.join(out_dir, \"{} X - PointLoads\".format(name_prefix)),\r\n        point_header, pt_rows_X\r\n    ))\r\n\r\n    # Wind Y point loads\r\n    created_files.append(write_one_file(\r\n        excel_app, ExcelMod,\r\n        os.path.join(out_dir, \"{} Y - PointLoads\".format(name_prefix)),\r\n        point_header, pt_rows_Y\r\n    ))\r\n\r\nexcept Exception as e:\r\n    errors.append(str(e))\r\nfinally:\r\n    if excel_app is not None:\r\n        try:\r\n            excel_app.Quit()\r\n        except:\r\n            pass\r\n\r\nOUT = {\r\n    \"CreatedFiles\": created_files,\r\n    \"Errors\": errors,\r\n    \"StartPoints\": start_pts,\r\n    \"Lines\": lines,\r\n    \"Counts\": {\r\n        \"X_line\": len(line_rows_X),\r\n        \"Y_line\": len(line_rows_Y),\r\n        \"X_point\": len(pt_rows_X),\r\n        \"Y_point\": len(pt_rows_Y)\r\n    },\r\n    \"Wind Force (kip)\": WindValues,\r\n}\r\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "37e92a6be5bf4f95bf2a920ed0c07bf6",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "2aba91c6f43349178b97a65390d9d3c6",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "048b1a3591c540829fa18fe205c014eb",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8d29943e0ff94c2ba19ecc9051d2cfc1",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f850a05682844aaa970bc03012eeed4d",
+      "End": "c9f8e60e617e4d71a8251c732b300c1d",
+      "Id": "ca3697e8c2714e56800fa019edf53016",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "15111dbc2b844e79bd55ef39d4a1b158",
+      "End": "e6ecaf51575047de85c81b4ef5b8fd58",
+      "Id": "77e87435e0a647c1977ca88e77c44991",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "15111dbc2b844e79bd55ef39d4a1b158",
+      "End": "2aba91c6f43349178b97a65390d9d3c6",
+      "Id": "1c9aea0c16034d8e88790d3aa865d0ff",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8ed788eaf1d04a06bbc5e0ca146b74c0",
+      "End": "18f1686d1f324ac6b2b65a4779328bf9",
+      "Id": "389eabb6799b420ca163f8a14724097c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d050d0acdc5944f0bc4cac171a366454",
+      "End": "da2462af78f54aa282680b49a63e9e75",
+      "Id": "c6d047396a16497f90cfe4427a5fa315",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "45e37d3c4b7e40fb961443a079ee422f",
+      "End": "f73bad4cc07b4d95a4e02413c9156958",
+      "Id": "7f98bd7e71f54c888284bfa3bda28af0",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.3",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "8.2",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.3.0.6316",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -69.20887756347656,
+      "EyeY": 200.61708068847656,
+      "EyeZ": 110.91944885253906,
+      "LookX": 5.481117248535156,
+      "LookY": -212.936767578125,
+      "LookZ": -185.8142852783203,
+      "UpX": 0.01754109375178814,
+      "UpY": 0.8038516640663147,
+      "UpZ": -0.5945711731910706
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "957131e2f3b149a78bf102d533dcdf3d",
+        "Name": "All Elements of Category",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 677.0764635226346,
+        "Y": 1029.3724035026812
+      },
+      {
+        "Id": "083e433794cf4d1689b3c3a5e6c828fb",
+        "Name": "Categories",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 320.7638056715175,
+        "Y": 1002.1801217193065
+      },
+      {
+        "Id": "40b078f133204bafb94264542040ab0e",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 579.0,
+        "Y": 828.0
+      },
+      {
+        "Id": "71ff79f7c27e49d29b6064d8276c401e",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1137.8501835073662,
+        "Y": 1618.5231658146804
+      },
+      {
+        "Id": "0e14865585274e339389749351642afd",
+        "Name": "Category.ByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 758.188297889588,
+        "Y": 1549.3665530432586
+      },
+      {
+        "Id": "cdc86dd0add548039d902a3c310ef70d",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 465.0,
+        "Y": 1525.0
+      },
+      {
+        "Id": "f94720c9d56646dea439058c6d06ddc7",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 664.0,
+        "Y": 1779.0
+      },
+      {
+        "Id": "b69c1f97a56a4ba8a4caedb66bb88090",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1447.3153347518992,
+        "Y": 1920.2312075708649
+      },
+      {
+        "Id": "37e92a6be5bf4f95bf2a920ed0c07bf6",
+        "Name": "Python Script v2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1959.622243873698,
+        "Y": 1943.1678247400473
+      }
+    ],
+    "Annotations": [],
+    "X": 60.450246145875894,
+    "Y": -381.74959518661,
+    "Zoom": 0.42710466541854913
+  }
+}
