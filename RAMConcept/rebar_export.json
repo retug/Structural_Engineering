@@ -1,0 +1,2642 @@
+[
+    {
+        "element_id": 2881305,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 98.26,
+            "y_ft": 181.9,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 125.01,
+            "y_ft": 181.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "20",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881306,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -61.94,
+            "y_ft": 176.9,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -32.19016988824266,
+            "y_ft": 176.79945985092343,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881307,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 63.11,
+            "y_ft": 182.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 88.11,
+            "y_ft": 182.0,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881308,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -19.72,
+            "y_ft": 190.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -5.719999999999999,
+            "y_ft": 190.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "16",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881309,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 0.3278,
+            "y_ft": 190.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 16.0778,
+            "y_ft": 190.0,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "16",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881310,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 29.59,
+            "y_ft": 190.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 45.34,
+            "y_ft": 190.0,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881311,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -43.47,
+            "y_ft": 190.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -34.22,
+            "y_ft": 190.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "7",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881312,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 99.33,
+            "y_ft": 190.7,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 128.32999999999998,
+            "y_ft": 190.7,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "9",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881313,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 100.1,
+            "y_ft": 192.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 110.1,
+            "y_ft": 192.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881314,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 99.41,
+            "y_ft": 198.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 121.41,
+            "y_ft": 198.3,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881315,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 80.18,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 93.68,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "9",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881316,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -42.67,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -32.17,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "10",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881317,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -21.72,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -3.719999999999999,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881318,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -0.5571,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 17.9429,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881319,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 28.78,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 47.28,
+            "y_ft": 200.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "18",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881320,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 58.03,
+            "y_ft": 201.8,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 76.53,
+            "y_ft": 201.8,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "15",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881321,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 100.9,
+            "y_ft": 204.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 111.4,
+            "y_ft": 204.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881322,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -50.37,
+            "y_ft": 208.4,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -32.37,
+            "y_ft": 208.4,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881323,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 29.52,
+            "y_ft": 209.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 46.769999999999996,
+            "y_ft": 209.0,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "8",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881324,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 58.72,
+            "y_ft": 207.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 92.72,
+            "y_ft": 207.0,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881325,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -21.12,
+            "y_ft": 208.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 15.879999999999999,
+            "y_ft": 208.0,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881326,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -62.33,
+            "y_ft": 208.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -54.33,
+            "y_ft": 208.0,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881327,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 100.6,
+            "y_ft": 210.2,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 121.6,
+            "y_ft": 210.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881328,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -21.72,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -3.719999999999999,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881329,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -0.5571,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 17.9429,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881330,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 58.03,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 76.53,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881331,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 28.73,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 47.230000000000004,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881332,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -50.31,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -32.31,
+            "y_ft": 215.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881333,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -62.26,
+            "y_ft": 215.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -54.26,
+            "y_ft": 215.0,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881334,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 80.19,
+            "y_ft": 215.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 88.19,
+            "y_ft": 215.0,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881335,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -37.52,
+            "y_ft": 217.8,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -16.270000000000003,
+            "y_ft": 217.8,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "2",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881336,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 12.59,
+            "y_ft": 217.8,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 34.34,
+            "y_ft": 217.8,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "2",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881337,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 41.88,
+            "y_ft": 217.8,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 63.38,
+            "y_ft": 217.8,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "2",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881338,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -11.6,
+            "y_ft": 219.2,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -21.35,
+            "y_ft": 219.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881339,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 7.568,
+            "y_ft": 219.2,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 17.317999999999998,
+            "y_ft": 219.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881340,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 68.4,
+            "y_ft": 219.2,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 58.650000000000006,
+            "y_ft": 219.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881341,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 29.48,
+            "y_ft": 219.9,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 46.480000000000004,
+            "y_ft": 219.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881342,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 28.73,
+            "y_ft": 222.2,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 47.230000000000004,
+            "y_ft": 222.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881343,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -11.6,
+            "y_ft": 222.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -21.85,
+            "y_ft": 222.3,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881344,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 7.568,
+            "y_ft": 222.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 17.817999999999998,
+            "y_ft": 222.3,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881345,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 68.4,
+            "y_ft": 222.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 58.150000000000006,
+            "y_ft": 222.3,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881839,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 20.2,
+            "y_ft": 147.9,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 20.2,
+            "y_ft": 178.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "22",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881840,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 86.05,
+            "y_ft": 178.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 86.05,
+            "y_ft": 149.6,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "18",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881841,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 75.05,
+            "y_ft": 180.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 75.05,
+            "y_ft": 148.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "8",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881843,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -24.18,
+            "y_ft": 178.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -24.18,
+            "y_ft": 152.6,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "7",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881845,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 49.92,
+            "y_ft": 178.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 49.92,
+            "y_ft": 154.6,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "12",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881846,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -5.348,
+            "y_ft": 178.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -5.348,
+            "y_ft": 154.6,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "12",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881847,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -14.15,
+            "y_ft": 154.4,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -14.15,
+            "y_ft": 183.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "20",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881848,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 8.99,
+            "y_ft": 154.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 8.99,
+            "y_ft": 184.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "19",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881849,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 37.35,
+            "y_ft": 154.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 37.35,
+            "y_ft": 184.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "26",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881850,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 75.7,
+            "y_ft": 163.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 75.7,
+            "y_ft": 180.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "16",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881851,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -32.51,
+            "y_ft": 184.4,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -32.51,
+            "y_ft": 161.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "10",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881852,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -55.78,
+            "y_ft": 203.8,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -55.78,
+            "y_ft": 163.3,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881853,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -41.43,
+            "y_ft": 207.9,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -41.43,
+            "y_ft": 161.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "10",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881854,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -12.96,
+            "y_ft": 200.8,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -12.96,
+            "y_ft": 170.3,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881855,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -4.036,
+            "y_ft": 196.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -4.036,
+            "y_ft": 174.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881856,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 10.33,
+            "y_ft": 201.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 10.33,
+            "y_ft": 169.8,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881857,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 38.64,
+            "y_ft": 201.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 38.64,
+            "y_ft": 169.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881858,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 56.23,
+            "y_ft": 196.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 56.23,
+            "y_ft": 174.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "10",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881859,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 72.15,
+            "y_ft": 201.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 72.15,
+            "y_ft": 169.8,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "7",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881860,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 19.34,
+            "y_ft": 196.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 19.34,
+            "y_ft": 174.6,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881861,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 126.7,
+            "y_ft": 191.7,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 126.7,
+            "y_ft": 181.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881862,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 124.9,
+            "y_ft": 191.7,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 124.9,
+            "y_ft": 183.7,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881863,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -49.05,
+            "y_ft": 206.2,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -49.05,
+            "y_ft": 169.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "8",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881864,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -61.34,
+            "y_ft": 175.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -61.309963600195815,
+            "y_ft": 216.549989064419,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881865,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 120.7,
+            "y_ft": 181.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 120.7,
+            "y_ft": 211.6,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881866,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 105.7,
+            "y_ft": 181.7,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 105.7,
+            "y_ft": 211.7,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "10",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881867,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 113.3,
+            "y_ft": 211.7,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 113.3,
+            "y_ft": 182.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881868,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 87.73,
+            "y_ft": 206.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 87.73,
+            "y_ft": 190.3,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "20",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881869,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -14.15,
+            "y_ft": 216.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -14.15,
+            "y_ft": 187.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "20",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881870,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 10.12,
+            "y_ft": 216.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 10.12,
+            "y_ft": 187.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "20",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881871,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 65.85,
+            "y_ft": 216.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 65.85,
+            "y_ft": 187.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "20",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881872,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -5.348,
+            "y_ft": 216.4,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -5.348,
+            "y_ft": 192.4,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "12",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881873,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 77.38,
+            "y_ft": 216.4,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 77.38,
+            "y_ft": 192.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "12",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881874,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 38.27,
+            "y_ft": 223.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 38.27,
+            "y_ft": 190.6,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "25",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881875,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -33.39,
+            "y_ft": 223.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -33.39,
+            "y_ft": 192.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "20",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881876,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 20.2,
+            "y_ft": 223.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 20.2,
+            "y_ft": 192.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "22",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881877,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 50.63,
+            "y_ft": 223.2,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 50.63,
+            "y_ft": 192.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "22",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881878,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 86.44,
+            "y_ft": 216.4,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 86.44,
+            "y_ft": 200.4,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "10",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881879,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -48.82,
+            "y_ft": 215.9,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -48.82,
+            "y_ft": 209.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "7",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881880,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 8.628,
+            "y_ft": 223.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 8.628,
+            "y_ft": 207.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881881,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -12.67,
+            "y_ft": 223.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -12.67,
+            "y_ft": 207.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881882,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 67.56,
+            "y_ft": 223.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 67.56,
+            "y_ft": 207.3,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 2881883,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -41.31,
+            "y_ft": 208.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -41.31,
+            "y_ft": 223.1,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442784,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 66.62,
+            "y_ft": 16.73,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 66.62,
+            "y_ft": -11.27,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442785,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -71.04,
+            "y_ft": 15.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -71.04,
+            "y_ft": -6.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "8",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442786,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -59.58,
+            "y_ft": 20.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -59.58,
+            "y_ft": -11.899999999999999,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "10",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442787,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -49.93,
+            "y_ft": 15.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -49.93,
+            "y_ft": -6.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "8",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442788,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -33.14,
+            "y_ft": 20.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -33.14,
+            "y_ft": -11.899999999999999,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442789,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -24.6,
+            "y_ft": 15.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -24.6,
+            "y_ft": -6.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "2",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442790,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -11.36,
+            "y_ft": 19.85,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -11.36,
+            "y_ft": -11.649999999999999,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "1",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442791,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -3.602,
+            "y_ft": 15.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -3.602,
+            "y_ft": -6.9,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "2",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442792,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 10.33,
+            "y_ft": 20.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 10.33,
+            "y_ft": -11.899999999999999,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442793,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 37.04,
+            "y_ft": 19.85,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 37.04,
+            "y_ft": -11.649999999999999,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442794,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 58.99,
+            "y_ft": 19.35,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 58.99,
+            "y_ft": -11.149999999999999,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442795,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 78.04,
+            "y_ft": 20.1,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 78.04,
+            "y_ft": -11.899999999999999,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442796,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 19.08,
+            "y_ft": 15.29,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 19.08,
+            "y_ft": -6.710000000000001,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442797,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 45.87,
+            "y_ft": 15.29,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 45.87,
+            "y_ft": -6.710000000000001,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442798,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -79.99,
+            "y_ft": -11.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -79.99,
+            "y_ft": 20.2,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "8",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442799,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -34.33,
+            "y_ft": 41.63,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -34.33,
+            "y_ft": 9.630000000000003,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "17",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442800,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -60.81,
+            "y_ft": 41.68,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -60.81,
+            "y_ft": 9.68,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "17",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442801,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 125.1,
+            "y_ft": 87.42,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 125.1,
+            "y_ft": 61.92,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "1",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442802,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 125.1,
+            "y_ft": 121.0,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 125.1,
+            "y_ft": 95.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "1",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442803,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -12.96,
+            "y_ft": 200.8,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -12.96,
+            "y_ft": 170.3,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442804,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -4.036,
+            "y_ft": 196.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -4.036,
+            "y_ft": 174.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442805,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 10.33,
+            "y_ft": 201.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 10.33,
+            "y_ft": 169.8,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "3",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442806,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 38.64,
+            "y_ft": 201.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 38.64,
+            "y_ft": 169.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "6",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442807,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 56.23,
+            "y_ft": 196.5,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 56.23,
+            "y_ft": 174.5,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "10",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442808,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 72.15,
+            "y_ft": 201.3,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 72.15,
+            "y_ft": 169.8,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "7",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442809,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": 19.34,
+            "y_ft": 196.6,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": 19.34,
+            "y_ft": 174.6,
+            "z_ft": 0.0
+        },
+        "bar_position": "Unknown",
+        "rebar_size": "#6",
+        "rebar_quantity": "4",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442810,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -32.72,
+            "y_ft": 9.452,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -32.72,
+            "y_ft": 25.951999999999998,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442811,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -22.56,
+            "y_ft": 35.02,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -22.56,
+            "y_ft": 8.020000000000003,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442812,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -2.629,
+            "y_ft": 34.98,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -2.629,
+            "y_ft": 10.979999999999997,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442813,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -12.71,
+            "y_ft": 35.08,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -12.71,
+            "y_ft": 11.079999999999998,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "18",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442814,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -34.33,
+            "y_ft": -33.13,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -34.33,
+            "y_ft": -0.8800000000000026,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "17",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442815,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -32.72,
+            "y_ft": -0.9446,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -32.72,
+            "y_ft": -17.4446,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "5",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442816,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -22.56,
+            "y_ft": -26.51,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -22.56,
+            "y_ft": -2.5100000000000016,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442817,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -2.629,
+            "y_ft": -26.47,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -2.629,
+            "y_ft": -2.469999999999999,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "14",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442818,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -12.71,
+            "y_ft": -26.58,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -12.71,
+            "y_ft": -2.3299999999999983,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "18",
+        "hooks": {
+            "left_hook": true,
+            "right_hook": false
+        },
+        "rebar_spacing": "3\""
+    },
+    {
+        "element_id": 3442819,
+        "family_name": "2 point - Rebar v1",
+        "start_point": {
+            "x_ft": -60.81,
+            "y_ft": -1.474,
+            "z_ft": 0.0
+        },
+        "end_point": {
+            "x_ft": -60.81,
+            "y_ft": -33.474,
+            "z_ft": 0.0
+        },
+        "bar_position": "Top",
+        "rebar_size": "#6",
+        "rebar_quantity": "16",
+        "hooks": {
+            "left_hook": false,
+            "right_hook": true
+        },
+        "rebar_spacing": "3\""
+    }
+]
